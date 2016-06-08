@@ -1,0 +1,216 @@
+  [1m[36m (115.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (142.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateProducts (20131009221921)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /home/ubuntu/Desktop/GitHub Code Imp/ajax_example/AjaxExample/db/migrate/20131009221921_create_products.rb:7)
+  [1m[35m (0.8ms)[0m  CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "price" decimal(12,2), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20131009221921"]]
+  [1m[35m (141.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mSQL (122.9ms)[0m  [1mDELETE FROM "products"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "products" ("id", "name", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["id", 1], ["name", "Nintendo Wii U Premium"], ["price", 250.0], ["created_at", "2016-05-19 12:10:45.691988"], ["updated_at", "2016-05-19 12:10:45.691988"]]
+  [1m[35m (141.8ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("id", "name", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["id", 2], ["name", "XBox 360 250GB"], ["price", 250.0], ["created_at", "2016-05-19 12:10:45.838433"], ["updated_at", "2016-05-19 12:10:45.838433"]]
+  [1m[36m (121.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("id", "name", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["id", 3], ["name", "Playstation 3 500 GB"], ["price", 239.95], ["created_at", "2016-05-19 12:10:45.964520"], ["updated_at", "2016-05-19 12:10:45.964520"]]
+  [1m[35m (129.5ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("id", "name", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["id", 4], ["name", "Nintendo Wii"], ["price", 99.95], ["created_at", "2016-05-19 12:10:46.098349"], ["updated_at", "2016-05-19 12:10:46.098349"]]
+  [1m[36m (129.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("id", "name", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["id", 5], ["name", "Nintendo 3DS"], ["price", 174.95], ["created_at", "2016-05-19 12:10:46.232475"], ["updated_at", "2016-05-19 12:10:46.232475"]]
+  [1m[35m (129.4ms)[0m  commit transaction
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-19 17:41:40 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/_index.html.erb (112.4ms)
+  Rendered products/index.html.erb within layouts/application (126.1ms)
+Completed 200 OK in 6514ms (Views: 6481.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 127.0.0.1 at 2016-05-19 17:41:47 +0530
+
+
+Started GET "/assets/products.self.css?body=1" for 127.0.0.1 at 2016-05-19 17:41:47 +0530
+
+
+Started GET "/assets/bootstrap_overrides.self.css?body=1" for 127.0.0.1 at 2016-05-19 17:41:47 +0530
+
+
+Started GET "/assets/jquery.self.js?body=1" for 127.0.0.1 at 2016-05-19 17:41:47 +0530
+
+
+Started GET "/assets/products.self.js?body=1" for 127.0.0.1 at 2016-05-19 17:41:47 +0530
+
+
+Started GET "/assets/turbolinks.self.js?body=1" for 127.0.0.1 at 2016-05-19 17:41:47 +0530
+
+
+Started GET "/assets/bootstrap.self.js?body=1" for 127.0.0.1 at 2016-05-19 17:41:47 +0530
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 127.0.0.1 at 2016-05-19 17:41:47 +0530
+
+
+Started GET "/assets/application.self.js?body=1" for 127.0.0.1 at 2016-05-19 17:41:47 +0530
+
+
+Started GET "/products/new" for 127.0.0.1 at 2016-05-19 17:41:58 +0530
+Processing by ProductsController#new as JS
+  Rendered products/_form.html.erb (58.7ms)
+  Rendered products/_new.html.erb (65.2ms)
+  Rendered products/new.js.erb (72.1ms)
+Completed 200 OK in 89ms (Views: 87.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2016-05-19 17:42:06 +0530
+Processing by ProductsController#create as JS
+  Parameters: {"utf8"=>"✓", "product"=>{"name"=>"test", "price"=>"23"}, "commit"=>"Create Product"}
+  [1m[36m (96.6ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (268.1ms)[0m  INSERT INTO "products" ("name", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "test"], ["price", 23.0], ["created_at", "2016-05-19 12:12:06.352053"], ["updated_at", "2016-05-19 12:12:06.352053"]]
+  [1m[36m (254.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/_index.html.erb (18.7ms)
+  Rendered products/_save.js.erb (28.2ms)
+  Rendered products/create.js.erb (41.4ms)
+Completed 200 OK in 838ms (Views: 69.5ms | ActiveRecord: 619.9ms)
+
+
+Started GET "/products/6/edit" for 127.0.0.1 at 2016-05-19 17:42:12 +0530
+Processing by ProductsController#edit as JS
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered products/_form.html.erb (1.8ms)
+  Rendered products/_edit.html.erb (5.8ms)
+  Rendered products/edit.js.erb (10.4ms)
+Completed 200 OK in 78ms (Views: 30.7ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/products/6" for 127.0.0.1 at 2016-05-19 17:42:18 +0530
+Processing by ProductsController#update as JS
+  Parameters: {"utf8"=>"✓", "product"=>{"name"=>"test asasas", "price"=>"23.0"}, "commit"=>"Update Product", "id"=>"6"}
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "products" SET "name" = ?, "updated_at" = ? WHERE "products"."id" = ?  [["name", "test asasas"], ["updated_at", "2016-05-19 12:12:18.535888"], ["id", 6]]
+  [1m[36m (474.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/_index.html.erb (6.3ms)
+  Rendered products/_save.js.erb (13.2ms)
+  Rendered products/update.js.erb (21.0ms)
+Completed 200 OK in 611ms (Views: 85.1ms | ActiveRecord: 475.2ms)
+
+
+Started GET "/products/6/delete" for 127.0.0.1 at 2016-05-19 17:42:22 +0530
+Processing by ProductsController#delete as JS
+  Parameters: {"product_id"=>"6"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered products/_delete.html.erb (0.9ms)
+  Rendered products/delete.js.erb (13.5ms)
+Completed 200 OK in 52ms (Views: 51.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/products/6/delete" for 127.0.0.1 at 2016-05-19 17:42:30 +0530
+Processing by ProductsController#delete as JS
+  Parameters: {"product_id"=>"6"}
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered products/_delete.html.erb (0.6ms)
+  Rendered products/delete.js.erb (6.8ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/products/6" for 127.0.0.1 at 2016-05-19 17:42:32 +0530
+Processing by ProductsController#destroy as JS
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 6]]
+  [1m[35m (243.4ms)[0m  commit transaction
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/_index.html.erb (6.0ms)
+  Rendered products/_save.js.erb (14.0ms)
+  Rendered products/destroy.js.erb (22.3ms)
+Completed 200 OK in 301ms (Views: 52.9ms | ActiveRecord: 244.3ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2016-05-19 17:42:39 +0530
+Processing by ProductsController#new as JS
+  Rendered products/_form.html.erb (2.3ms)
+  Rendered products/_new.html.erb (7.5ms)
+  Rendered products/new.js.erb (14.1ms)
+Completed 200 OK in 43ms (Views: 41.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-06 11:53:11 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/_index.html.erb (45.0ms)
+  Rendered products/index.html.erb within layouts/application (50.1ms)
+Completed 200 OK in 556ms (Views: 527.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 127.0.0.1 at 2016-06-06 11:53:13 +0530
+
+
+Started GET "/assets/bootstrap_overrides.self.css?body=1" for 127.0.0.1 at 2016-06-06 11:53:13 +0530
+
+
+Started GET "/assets/jquery.self.js?body=1" for 127.0.0.1 at 2016-06-06 11:53:13 +0530
+
+
+Started GET "/assets/products.self.css?body=1" for 127.0.0.1 at 2016-06-06 11:53:13 +0530
+
+
+Started GET "/assets/bootstrap.self.js?body=1" for 127.0.0.1 at 2016-06-06 11:53:13 +0530
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 127.0.0.1 at 2016-06-06 11:53:13 +0530
+
+
+Started GET "/assets/products.self.js?body=1" for 127.0.0.1 at 2016-06-06 11:53:13 +0530
+
+
+Started GET "/assets/turbolinks.self.js?body=1" for 127.0.0.1 at 2016-06-06 11:53:13 +0530
+
+
+Started GET "/assets/application.self.js?body=1" for 127.0.0.1 at 2016-06-06 11:53:13 +0530
+
+
+Started GET "/products/new" for 127.0.0.1 at 2016-06-06 11:53:18 +0530
+Processing by ProductsController#new as JS
+  Rendered products/_form.html.erb (68.0ms)
+  Rendered products/_new.html.erb (75.1ms)
+  Rendered products/new.js.erb (83.1ms)
+Completed 200 OK in 109ms (Views: 106.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2016-06-06 11:53:29 +0530
+Processing by ProductsController#create as JS
+  Parameters: {"utf8"=>"✓", "product"=>{"name"=>"test", "price"=>"demos"}, "commit"=>"Create Product"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered products/_save.js.erb (1.1ms)
+  Rendered products/create.js.erb (5.5ms)
+Completed 200 OK in 29ms (Views: 26.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2016-06-06 11:53:34 +0530
+Processing by ProductsController#create as JS
+  Parameters: {"utf8"=>"✓", "product"=>{"name"=>"test", "price"=>"123"}, "commit"=>"Create Product"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (44.4ms)[0m  INSERT INTO "products" ("name", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "test"], ["price", 123.0], ["created_at", "2016-06-06 06:23:34.073073"], ["updated_at", "2016-06-06 06:23:34.073073"]]
+  [1m[36m (410.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/_index.html.erb (14.1ms)
+  Rendered products/_save.js.erb (24.8ms)
+  Rendered products/create.js.erb (34.3ms)
+Completed 200 OK in 1012ms (Views: 47.1ms | ActiveRecord: 455.7ms)
